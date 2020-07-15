@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestLocationApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="empty_list">No news found!</string>
+    <string name="an_error_occurred">An error occurred</string>
+    <string name="error">Error</string>
+</resources>
