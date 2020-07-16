@@ -30,11 +30,7 @@ class LocationRepository() : LocationDataSource, CommonApiCall() {
                         }
                     } else {
                         ApiManager.Coroutines.main {
-                            if(locationData != null){
-                                callback.onError(locationData)
-                            } else {
-                                callback.onError("Something went wrong, Please try again!")
-                            }
+                            callback.onError("Please try again!")
                             fetchLocationJob.complete()
                         }
                     }
