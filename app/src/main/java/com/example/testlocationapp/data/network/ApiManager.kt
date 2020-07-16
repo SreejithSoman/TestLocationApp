@@ -15,7 +15,7 @@ import retrofit2.http.Query
 
 object ApiManager : CommonApiCall() {
 
-    suspend fun getLocationsCall(headerType: String, shopId: String?): ResponseType {
+    suspend fun getLocationsCall(headerType: String, shopId: String?): JsonObject {
         return apiCall{ shopId?.let { ApiClient.build()?.getLocations(headerType, it) } }
     }
 
@@ -55,6 +55,6 @@ object ApiManager : CommonApiCall() {
         suspend fun getLocations(
             @Header("Content-Type") headType: String,
             @Query("filter[shop_id]") id: String
-        ): Response<ResponseType>
+        ): Response<JsonObject>
     }
 }
