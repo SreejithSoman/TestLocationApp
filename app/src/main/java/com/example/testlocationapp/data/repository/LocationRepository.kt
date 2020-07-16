@@ -25,11 +25,13 @@ class LocationRepository() : LocationDataSource, CommonApiCall() {
                     val locationData = ApiManager.getLocationsCall("application/json", shopId)
                     if (locationData != null) {
                         ApiManager.Coroutines.main {
+
                             callback.onSuccess(locationData)
                             fetchLocationJob.complete()
                         }
                     } else {
                         ApiManager.Coroutines.main {
+
                             callback.onError("Please try again!")
                             fetchLocationJob.complete()
                         }
@@ -37,6 +39,7 @@ class LocationRepository() : LocationDataSource, CommonApiCall() {
 
                 } catch (e: Exception) {
                     ApiManager.Coroutines.main {
+
                         callback.onError("Something went wrong, Please try again!")
                         fetchLocationJob.complete()
                     }
